@@ -5,6 +5,8 @@ Example project to create and publish a NuGet package
 1. Download the [latest Nuget](https://www.nuget.org/downloads) CLI
 2. Move the downloaded file (nuget.exe) to a tools folder e.g. c:\clitools
 3. Add to path variable (Control Panel > System > Advance settings > Environment Variables > PATH)
+<img src="https://raw.githubusercontent.com/mariusvrstr/Spike.NugetSeedworks/main/resources/System.png" width="300" alt="PATH Variable"> 
+
 
 # Project Setup
 

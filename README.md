@@ -10,7 +10,8 @@ Example project to create and publish a NuGet package
 
 # Project Setup
 
-1. Ensure the Assembly name is unique <img src="https://raw.githubusercontent.com/mariusvrstr/Spike.NugetSeedworks/main/resources/AssemblyName.png" width="300" alt="PATH Variable"> 
+1. Ensure the Assembly name is unique
+<img src="https://raw.githubusercontent.com/mariusvrstr/Spike.NugetSeedworks/main/resources/AssemblyName.png" width="300" alt="PATH Variable"> 
 
 
 # Azure DevOps Setup

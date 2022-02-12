@@ -25,6 +25,12 @@ steps:
     version: $(dotNetVersion)
     includePreviewVersions: true
 
+- task: NuGetCommand@2
+  inputs:
+    command: pack
+    packagesToPack: '**/*.csproj'
+    packDestination: '$(Build.ArtifactStagingDirectory)'
+
 - task: CmdLine@2
   displayName: Show Build.SourcesDirectory Content
   inputs:

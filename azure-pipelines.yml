@@ -11,17 +11,32 @@ pool:
 
 variables:
   solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  dotNetFramework: 'net6.0'
+  dotNetVersion: '6.0.x'
+  buildPlatform: 'Any CPU'
 
 steps:
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
+  displayName: Restore NuGet Dependancies
   inputs:
     restoreSolution: '$(solution)'
 
+- task: UseDotNet@2
+  displayName: 'Set .NET Version'
+  inputs:
+    version: $(dotNetVersion)
+    includePreviewVersions: true
+
+- task: CmdLine@2
+  displayName: Show Build.SourcesDirectory Content
+  inputs:
+    script: 'tree $(Build.SourcesDirectory) /f' 
+
 - task: VSBuild@1
+  displayName: Build Solution
   inputs:
     solution: '$(solution)'
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
@@ -29,6 +44,12 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: VSTest@2
+  displayName: Run Unit Tests
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: CmdLine@2
+  displayName: Show Publish Content
+  inputs:
+    script: 'tree $(Build.ArtifactStagingDirectory) /f' 

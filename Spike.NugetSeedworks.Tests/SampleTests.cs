@@ -2,12 +2,12 @@ using Xunit;
 
 namespace Spike.NugetSeedworks.Tests
 {
-    public class UnitTest1
+    public class SampleTests
     {
         [Fact]
-        public void Test1()
+        public void ExampleTest()
         {
-
+            Assert.Equal(1, 1);
         }
     }
 }

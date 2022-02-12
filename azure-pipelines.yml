@@ -18,25 +18,20 @@ variables:
 
 steps:
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'restore'
-    projects: '$(solution)'
-    feedsToUse: 'select'
-
-# - task: NuGetToolInstaller@1
-
-# - task: NuGetCommand@2
-#   inputs:
-#    command: pack
-#    packagesToPack: '**/*.csproj'
-#    packDestination: '$(Build.ArtifactStagingDirectory)'
+- task: NuGetToolInstaller@1
 
 - task: UseDotNet@2
   displayName: 'Set .NET Version'
   inputs:
     version: $(dotNetVersion)
     includePreviewVersions: true
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore'
+  inputs:
+    command: restore
+    projects: '**/*.csproj'
+#    feedsToUse: 'select'
 
 - task: CmdLine@2
   displayName: Show Build.SourcesDirectory Content

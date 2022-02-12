@@ -17,13 +17,18 @@ variables:
   buildPlatform: 'Any CPU'
 
 steps:
-- task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
   inputs:
-    command: pack
-    packagesToPack: '**/*.csproj'
-    packDestination: '$(Build.ArtifactStagingDirectory)'
+    restoreSolution: '$(solution)'
+
+# - task: NuGetToolInstaller@1
+
+# - task: NuGetCommand@2
+#   inputs:
+#    command: pack
+#    packagesToPack: '**/*.csproj'
+#    packDestination: '$(Build.ArtifactStagingDirectory)'
 
 - task: UseDotNet@2
   displayName: 'Set .NET Version'

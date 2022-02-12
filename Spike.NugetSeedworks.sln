@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spike.NugetSeedworks", "Spike.NugetSeedworks\Spike.NugetSeedworks.csproj", "{C81E8058-3FAB-4D91-9E48-872484548D5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spike.NugetSeedworks", "Spike.NugetSeedworks\Spike.NugetSeedworks.csproj", "{7D617906-0AF6-4B79-A073-30B29E65B058}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spike.NugetSeedworks.Tests", "Spike.NugetSeedworks.Tests\Spike.NugetSeedworks.Tests.csproj", "{1CAFAD90-0BEE-4C72-AA8F-5EC927C11BE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spike.NugetSeedworks.Tests", "Spike.NugetSeedworks.Tests\Spike.NugetSeedworks.Tests.csproj", "{343B3733-0B29-41A1-B039-3209206E9353}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C81E8058-3FAB-4D91-9E48-872484548D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C81E8058-3FAB-4D91-9E48-872484548D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C81E8058-3FAB-4D91-9E48-872484548D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C81E8058-3FAB-4D91-9E48-872484548D5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1CAFAD90-0BEE-4C72-AA8F-5EC927C11BE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1CAFAD90-0BEE-4C72-AA8F-5EC927C11BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1CAFAD90-0BEE-4C72-AA8F-5EC927C11BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1CAFAD90-0BEE-4C72-AA8F-5EC927C11BE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D617906-0AF6-4B79-A073-30B29E65B058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D617906-0AF6-4B79-A073-30B29E65B058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D617906-0AF6-4B79-A073-30B29E65B058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D617906-0AF6-4B79-A073-30B29E65B058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{343B3733-0B29-41A1-B039-3209206E9353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{343B3733-0B29-41A1-B039-3209206E9353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{343B3733-0B29-41A1-B039-3209206E9353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{343B3733-0B29-41A1-B039-3209206E9353}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

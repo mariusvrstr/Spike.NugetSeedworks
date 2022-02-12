@@ -1,6 +1,13 @@
 # Spike.NugetSeedworks
 Example project to create and publish a NuGet package
 
+[![Build Status](https://marius-vrstr.visualstudio.com/NugetSeedworks/_apis/build/status/mariusvrstr.Spike.NugetSeedworks?branchName=main)](https://marius-vrstr.visualstudio.com/NugetSeedworks/_build/latest?definitionId=5&branchName=main)
+
+Reference  | Location
+------------- | -------------
+Azure DevOps CI/CD  | [Project Reference](https://marius-vrstr.visualstudio.com/NugetSeedworks)
+
+
 # Environment Setup
 1. Download the [latest Nuget](https://www.nuget.org/downloads) CLI
 2. Move the downloaded file (nuget.exe) to a tools folder e.g. c:\clitools

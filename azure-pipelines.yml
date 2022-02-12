@@ -19,17 +19,17 @@ variables:
 steps:
 - task: NuGetToolInstaller@1
 
-- task: UseDotNet@2
-  displayName: 'Set .NET Version'
-  inputs:
-    version: $(dotNetVersion)
-    includePreviewVersions: true
-
 - task: NuGetCommand@2
   inputs:
     command: pack
     packagesToPack: '**/*.csproj'
     packDestination: '$(Build.ArtifactStagingDirectory)'
+
+- task: UseDotNet@2
+  displayName: 'Set .NET Version'
+  inputs:
+    version: $(dotNetVersion)
+    includePreviewVersions: true
 
 - task: CmdLine@2
   displayName: Show Build.SourcesDirectory Content

@@ -30,7 +30,10 @@ Azure DevOps CI/CD  | [Project Reference](https://marius-vrstr.visualstudio.com/
 
 
 # Azure DevOps Setup
-This will allow for automated builds and package feed
+This will allow for automated builds and package feed.
+1. Add new Article Feed
+2. Add new Pipeline (See YML file)
+<img src="https://raw.githubusercontent.com/mariusvrstr/Spike.NugetSeedworks/main/resources/PushFeed.png" width="300" alt="PATH Variable"> 
 
 
 # Resources

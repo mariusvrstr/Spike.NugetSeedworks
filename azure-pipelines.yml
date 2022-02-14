@@ -54,12 +54,19 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Package Project'
   inputs:
-    command: pack
+    command: 'pack'
     nobuild: true
-    versioningScheme: byEnvVar
-    versionEnvVar: releaseVersion
+    packagesToPack: '**/*.csproj'
+    versioningScheme: 'byBuildNumber'
+
+#- task: DotNetCoreCLI@2
+#  displayName: 'Package Project'
+#  inputs:
+#    command: pack
+#    nobuild: true
+#    versioningScheme: byEnvVar
+#    versionEnvVar: releaseVersion
 
 - task: DotNetCoreCLI@2
   displayName: 'Push Project to Article Feed'

@@ -16,12 +16,11 @@ variables:
   dotNetFramework: 'net6.0'
   dotNetVersion: '6.0.x'
   buildPlatform: 'Any CPU'
-  version.MajorMinor: '1.0'
-  releaseVersion: '$(version.MajorMinor).$(version.Revision)'
+  releaseVersion: '1.0.0.$(build).$(buildNumber)'
 
 steps:
 
-- script: echo '$(releaseVersion)'
+- script: echo 'Build Number $(releaseVersion)'
   displayName: Show Release Version
 
 - task: UseDotNet@2

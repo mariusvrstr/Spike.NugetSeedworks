@@ -57,6 +57,7 @@ steps:
     versionEnvVar: releaseVersion
 
 - task: DotNetCoreCLI@2
+  displayName: 'Push Project to Article Feed'
   inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'

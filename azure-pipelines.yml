@@ -16,7 +16,7 @@ variables:
   dotNetFramework: 'net6.0'
   dotNetVersion: '6.0.x'
   buildPlatform: 'Any CPU'
-  releaseVersion: "1.$(build.buildNumber)"
+  releaseVersion: "1.0.0.$(build.buildNumber)"
 
 steps:
 

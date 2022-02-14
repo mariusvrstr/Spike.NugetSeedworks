@@ -26,32 +26,42 @@ steps:
     includePreviewVersions: true
 
 - task: DotNetCoreCLI@2
-  displayName: Restore
+  displayName: Restore NuGet Dependancies
   inputs:
     command: restore
     arguments: "**/*.csproj"
-    feedsToUse: select
-    #includeNuGetOrg: true
-    #feedsToUse: 'select'
 
 - task: CmdLine@2
   displayName: Show Build.SourcesDirectory Content
   inputs:
     script: 'tree $(Build.SourcesDirectory) /f' 
 
-- task: VSBuild@1
-  displayName: Build Solution
+- task: DotNetCoreCLI@2
+  displayName: 'Build Repository Projects'
   inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    projects: '**/*.csproj'
+    arguments: '/p:Version=$(releaseVersion)'
 
 - task: VSTest@2
   displayName: Run Unit Tests
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Package Project'
+  inputs:
+    command: pack
+    nobuild: true
+    versioningScheme: byEnvVar
+    versionEnvVar: releaseVersion
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    nuGetFeedType: 'internal'
+    publishVstsFeed: 'e6d3f8af-b2d9-4284-af11-9b3f8889d7f1/bafc94e5-8e35-4df1-8b31-c4c3d270f5c8'
 
 - task: CmdLine@2
   displayName: Show Publish Content

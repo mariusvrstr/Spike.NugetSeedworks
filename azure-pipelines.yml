@@ -19,7 +19,7 @@ variables:
 
 steps:
 
-- task: NuGetToolInstaller@1
+# - task: NuGetToolInstaller@1
 
 - task: UseDotNet@2
   displayName: 'Set .NET Version'
@@ -27,11 +27,11 @@ steps:
     version: $(dotNetVersion)
     includePreviewVersions: true
 
-- task: NuGetCommand@2
-  displayName: 'Restore NuGet'
-  inputs:
-    restoreSolution: '$(solution)'
-    packagesdirectory: '..\packages'
+#- task: NuGetCommand@2
+#  displayName: 'Restore NuGet'
+#  inputs:
+#    restoreSolution: '$(solution)'
+#    packagesdirectory: '..\packages'
 
 #- task: DotNetCoreCLI@2
 #  displayName: 'Restore NuGet References'
@@ -39,6 +39,14 @@ steps:
 #    command: restore
 #    projects: '**/*.csproj'
 #    feedsToUse: 'select'
+
+- task: DotNetCoreCLI@2
+  displayName: Restore
+  inputs:
+    command: restore
+    arguments: "**/*.csproj"
+    feedsToUse: select
+    #includeNuGetOrg: true
 
 - task: CmdLine@2
   displayName: Show Build.SourcesDirectory Content

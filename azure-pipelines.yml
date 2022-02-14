@@ -40,6 +40,7 @@ steps:
   inputs:
     projects: '**/*.csproj'
     arguments: '/p:Version=$(releaseVersion)'
+    configuration: '$(buildConfiguration)'
 
 - task: CmdLine@2
   displayName: Show Build.SourcesDirectory Content

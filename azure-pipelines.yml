@@ -35,16 +35,16 @@ steps:
     command: restore
     arguments: "**/*.csproj"
 
-- task: CmdLine@2
-  displayName: Show Build.SourcesDirectory Content
-  inputs:
-    script: 'tree $(Build.SourcesDirectory) /f' 
-
 - task: DotNetCoreCLI@2
   displayName: 'Build Repository Projects'
   inputs:
     projects: '**/*.csproj'
-    # arguments: '/p:Version=$(releaseVersion)'
+    arguments: '/p:Version=$(releaseVersion)'
+
+- task: CmdLine@2
+  displayName: Show Build.SourcesDirectory Content
+  inputs:
+    script: 'tree $(Build.SourcesDirectory) /f' 
 
 - task: VSTest@2
   displayName: Run Unit Tests

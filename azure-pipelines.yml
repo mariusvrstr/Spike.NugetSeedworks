@@ -16,12 +16,12 @@ variables:
   dotNetFramework: 'net6.0'
   dotNetVersion: '6.0.x'
   buildPlatform: 'Any CPU'
-  # releaseVersion: '1.0.0.$(build.buildNumber)'
+  releaseVersion: '1.0.0.0.1' # $(build.buildNumber)
 
 steps:
 
-#- script: echo 'Build Number [$(releaseVersion)]'
-#  displayName: Show Release Version
+- script: echo 'Build Number [$(releaseVersion)]'
+  displayName: Show Release Version
 
 - task: UseDotNet@2
   displayName: 'Set .NET Version'
@@ -44,7 +44,7 @@ steps:
   displayName: 'Build Repository Projects'
   inputs:
     projects: '**/*.csproj'
-    # arguments: '/p:Version=$(releaseVersion)'
+    arguments: '/p:Version=$(releaseVersion)'
 
 - task: VSTest@2
   displayName: Run Unit Tests
@@ -57,8 +57,8 @@ steps:
   inputs:
     command: pack
     nobuild: true
-    #versioningScheme: byEnvVar
-    #versionEnvVar: releaseVersion
+    versioningScheme: byEnvVar
+    versionEnvVar: releaseVersion
 
 - task: DotNetCoreCLI@2
   displayName: 'Push Project to Article Feed'

@@ -35,3 +35,4 @@ This will allow for automated builds and package feed
 
 # Resources
 - [Create and publish package using visual studio](https://docs.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio-net-framework)
+- [Assigning access to internal projects](https://stackoverflow.com/questions/61384798/nuget-restore-not-working-with-artifact-feed-in-azure-devops)

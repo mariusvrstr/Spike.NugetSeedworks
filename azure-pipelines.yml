@@ -44,7 +44,7 @@ steps:
   displayName: 'Build Repository Projects'
   inputs:
     projects: '**/*.csproj'
-    arguments: '/p:Version=$(releaseVersion)'
+    # arguments: '/p:Version=$(releaseVersion)'
 
 - task: VSTest@2
   displayName: Run Unit Tests
